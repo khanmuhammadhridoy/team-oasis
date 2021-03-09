@@ -1,0 +1,20 @@
+.main {
+  background: black;
+}
+.header {
+  text-align: center;
+  background: url("../../images/bg.png") no-repeat center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 300px;
+  color: #fff;
+}
+.title {
+  font-size: 4rem;
+  width: 100%;
+  margin: auto;
+  font-weight: 900;
+}
+.row {
+  margin-top: 20px;
+}

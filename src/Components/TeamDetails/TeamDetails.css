@@ -1,0 +1,9 @@
+.teamHeader{
+  /* background: url("`${strStadiumThumb}`") no-repeat center; */
+  
+}
+.teamHeader img {
+    display: block;
+    margin: auto;
+    width: 20%;
+}
