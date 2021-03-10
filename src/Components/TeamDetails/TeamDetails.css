@@ -1,9 +1,53 @@
-.teamHeader{
-  /* background: url("`${strStadiumThumb}`") no-repeat center; */
-  
+.teamHeader {
+  background-size: cover;
+  position: relative;
+  background-repeat: no-repeat;
+  height: 300px;
+  color: #fff;
 }
 .teamHeader img {
-    display: block;
-    margin: auto;
-    width: 20%;
+  display: block;
+  margin: auto;
+  width: 15%;
+}
+.logo {
+  width: 100%;
+  margin: auto;
+  z-index: 2;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: #000000;
+  z-index: 1;
+  opacity: 0.45;
+}
+.teamDetails {
+  background: lightcyan;
+  color: #000;
+  border-radius: 20px;
+  padding: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.description {
+  color: #fff;
+}
+.teamDetails p {
+  line-height: 0.5;
+}
+.teamDetails h3 {
+  line-height: 2;
+}
+.icon a {
+  color: lightcyan;
+  margin: 10px;
+}
+.icon {
+  text-align: center;
+  font-size: 3rem;
+  color: white;
 }

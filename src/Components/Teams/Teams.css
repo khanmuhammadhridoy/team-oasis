@@ -24,5 +24,11 @@
   .teams {
     display: grid;
     grid-template-columns: 1fr;
+    height: 350px;
+
+  }
+}
+@media screen and (max-width: ≥992px) {
+  .teams .teamDetails {
   }
 }
