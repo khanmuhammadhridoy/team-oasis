@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./TeamDetails.css";
+import Male from "../../images/male.png" 
+import Female from "../../images/female.png" 
 import {
   faFlag,
   faFutbol,
@@ -41,6 +43,11 @@ const TeamDetails = () => {
     strTwitter,
     strYoutube,
   } = team;
+  // const toggle = ()=>{
+  //   if (strGender.toLowerCase() === male.toLowerCase()){
+  //     male()
+  //   }
+  // }
   // console.log(team);
   // const {strTeam,intFormedYear}= team;
   // const teamData = Object.keys(team)
@@ -78,9 +85,10 @@ const TeamDetails = () => {
             </p>
           </div>
           <div className="col-md-6">
-            <img src="../../images/bg.png" alt="" />
+            <img src={Male} alt="" />
           </div>
         </div>
+        {/* <button onClick={()=>toggle()}>Toggle</button> */}
         <div className="description">
           <p>{strDescriptionEN}</p>
           <div className="icon">
