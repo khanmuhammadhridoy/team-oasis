@@ -2,12 +2,11 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./TeamDetails.css";
-import Male from "../../images/male.png" 
-import Female from "../../images/female.png" 
+import Male from "../../images/male.png";
+import Female from "../../images/female.png";
 import {
   faFlag,
   faFutbol,
-  faMapMarkerAlt,
   faMars,
   faSearchLocation,
   faVenus,
@@ -27,7 +26,7 @@ const TeamDetails = () => {
       .then((res) => res.json())
       .then((data) => setTeam(data.teams[0]));
   }, [id]);
-  console.log(team);
+  // console.log(team);
 
   const {
     strTeam,
@@ -43,6 +42,12 @@ const TeamDetails = () => {
     strTwitter,
     strYoutube,
   } = team;
+
+  // const [gender, setGender] = useState("Male");
+  const gender = "Male";
+  // setGender(strGender);
+  // console.log(gender);
+
   // const toggle = ()=>{
   //   if (strGender.toLowerCase() === male.toLowerCase()){
   //     male()
@@ -77,34 +82,48 @@ const TeamDetails = () => {
             <p>
               <FontAwesomeIcon icon={faFutbol} /> Sport Type: {strSport}
             </p>
-            <p>
-              <FontAwesomeIcon icon={faMars} /> Gender: {strGender}
-            </p>
-            <p>
-              <FontAwesomeIcon icon={faVenus} /> Gender: {strGender}
-            </p>
+            {gender === strGender ? (
+              <p>
+                <FontAwesomeIcon icon={faMars} /> Gender: {strGender}
+              </p>
+            ) : (
+              <p>
+                <FontAwesomeIcon icon={faVenus} /> Gender: {strGender}
+              </p>
+            )}
           </div>
           <div className="col-md-6">
-            <img src={Male} alt="" />
+            {gender === strGender ? (
+              <img src={Male} alt="" />
+            ) : (
+              <img src={Female} alt="" />
+            )}
           </div>
         </div>
         {/* <button onClick={()=>toggle()}>Toggle</button> */}
         <div className="description">
           <p>{strDescriptionEN}</p>
           <div className="icon">
-            <Link to={`/${strFacebook}`}>
+            <Link
+              to={{
+                pathname: `https://${strFacebook}`,
+              }}
+              target="_blank"
+              rel="noreferrer"
+            >
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
-            <a target="_blank" href={strFacebook}>
-              <FontAwesomeIcon icon={faFacebook} />
-            </a>
-            <a href={strInstagram}>
+            <a
+              target="_blank"
+              rel="noreferrer"
+              href={`https://${strInstagram}`}
+            >
               <FontAwesomeIcon icon={faInstagram} />
             </a>
-            <a href={strTwitter}>
+            <a target="_blank" rel="noreferrer" href={`https://${strTwitter}`}>
               <FontAwesomeIcon icon={faTwitterSquare} />
             </a>
-            <a href={strYoutube}>
+            <a target="_blank" rel="noreferrer" href={`https://${strYoutube}`}>
               <FontAwesomeIcon icon={faYoutubeSquare} />
             </a>
           </div>
