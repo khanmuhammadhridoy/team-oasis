@@ -12,12 +12,13 @@ const Home = () => {
       .then((res) => res.json())
       .then((data) => setTeams(data.teams));
   }, []);
-  // console.log(teams);
   return (
     <div className="main">
+      {/* Front page header */}
       <div className="header d-flex">
         <h2 className="title">Team Oasis</h2>
       </div>
+      {/* teams */}
       <div className="container">
         <div className="row">
           {teams.map((team) => (

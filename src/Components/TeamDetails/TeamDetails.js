@@ -17,6 +17,7 @@ import {
   faTwitterSquare,
   faYoutubeSquare,
 } from "@fortawesome/free-brands-svg-icons";
+// all import end
 
 const TeamDetails = () => {
   const { id } = useParams();
@@ -26,8 +27,6 @@ const TeamDetails = () => {
       .then((res) => res.json())
       .then((data) => setTeam(data.teams[0]));
   }, [id]);
-  // console.log(team);
-
   const {
     strTeam,
     intFormedYear,
@@ -43,22 +42,11 @@ const TeamDetails = () => {
     strYoutube,
   } = team;
 
-  // const [gender, setGender] = useState("Male");
   const gender = "Male";
-  // setGender(strGender);
-  // console.log(gender);
 
-  // const toggle = ()=>{
-  //   if (strGender.toLowerCase() === male.toLowerCase()){
-  //     male()
-  //   }
-  // }
-  // console.log(team);
-  // const {strTeam,intFormedYear}= team;
-  // const teamData = Object.keys(team)
-  // console.log(teamData)
   return (
     <div className="main">
+      {/* teamDetails header */}
       <div
         className="teamHeader d-flex"
         style={{ backgroundImage: `url(${strStadiumThumb})` }}
@@ -68,6 +56,7 @@ const TeamDetails = () => {
           <img src={strTeamBadge} alt="" />
         </div>
       </div>
+      {/* teamDeatils */}
       <div className="container">
         <div className="row teamDetails">
           <div className="col-md-6">
@@ -100,9 +89,9 @@ const TeamDetails = () => {
             )}
           </div>
         </div>
-        {/* <button onClick={()=>toggle()}>Toggle</button> */}
         <div className="description">
           <p>{strDescriptionEN}</p>
+          {/* icons with dynamic link */}
           <div className="icon">
             <Link
               to={{
