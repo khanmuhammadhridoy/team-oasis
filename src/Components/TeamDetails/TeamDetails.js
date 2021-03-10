@@ -41,9 +41,13 @@ const TeamDetails = () => {
     strTwitter,
     strYoutube,
   } = team;
-
-  const gender = "Male";
-
+  const gender = "female";
+  let dynamicGender;
+  if (strGender === undefined) {
+    dynamicGender = "";
+  } else {
+    dynamicGender = strGender;
+  }
   return (
     <div className="main">
       {/* teamDetails header */}
@@ -71,21 +75,22 @@ const TeamDetails = () => {
             <p>
               <FontAwesomeIcon icon={faFutbol} /> Sport Type: {strSport}
             </p>
-            {gender === strGender ? (
+
+            {gender.toLowerCase() === dynamicGender.toLowerCase() ? (
               <p>
-                <FontAwesomeIcon icon={faMars} /> Gender: {strGender}
+                <FontAwesomeIcon icon={faVenus} /> Gender: {strGender}
               </p>
             ) : (
               <p>
-                <FontAwesomeIcon icon={faVenus} /> Gender: {strGender}
+                <FontAwesomeIcon icon={faMars} /> Gender: {strGender}
               </p>
             )}
           </div>
           <div className="col-md-6">
-            {gender === strGender ? (
-              <img src={Male} alt="" />
-            ) : (
+            {gender.toLowerCase() === dynamicGender.toLowerCase() ? (
               <img src={Female} alt="" />
+            ) : (
+              <img src={Male} alt="" />
             )}
           </div>
         </div>
