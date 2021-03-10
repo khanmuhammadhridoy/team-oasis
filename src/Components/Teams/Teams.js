@@ -5,9 +5,6 @@ import { faArrowRight } from "@fortawesome/free-solid-svg-icons";
 import { useHistory } from "react-router-dom";
 
 const Leagues = (props) => {
-  {
-    /* sending data to teamDetails component */
-  }
   const history = useHistory();
   const teamButtonCLick = (id) => {
     history.push(`/team/${id}`);
