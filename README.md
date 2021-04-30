@@ -4,7 +4,7 @@ Name: Team Oasis
 
 ## Live Link
 
-Live: [Team Oasis](https://team-oasis.netlify.app/)
+Live: [Team Oasis](https://teamoasis.netlify.app/)
 
 ## Website Information
 
